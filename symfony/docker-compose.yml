@@ -1,0 +1,5 @@
+sf:
+  build: .
+  dockerfile: Dockerfile
+  volumes:
+   - .:/var/www
