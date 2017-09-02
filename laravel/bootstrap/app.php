@@ -52,16 +52,16 @@ $app->singleton(
 |
 */
 
-// use Monolog\Handler\StreamHandler;
-// use Monolog\Logger;
-// use Monolog\Processor\PsrLogMessageProcessor;
-// use App\Logs\InsightOpsHandler;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
+use Monolog\Processor\PsrLogMessageProcessor;
+use App\Logs\InsightOpsHandler;
 
-// $app->configureMonologUsing(function (Logger $monolog) {
-//     $monolog->pushHandler(new StreamHandler(__DIR__.'/../storage/logs/laravel.log'));
-//     $monolog->pushProcessor(new PsrLogMessageProcessor());
+$app->configureMonologUsing(function (Logger $monolog) {
+    $monolog->pushHandler(new StreamHandler(__DIR__.'/../storage/logs/laravel.log'));
+    $monolog->pushProcessor(new PsrLogMessageProcessor());
 
-//     // $monolog->pushHandler(new InsightOpsHandler(env('INSIGHT_OPS_TOKEN')));
-// });
+    $monolog->pushHandler(new InsightOpsHandler(env('INSIGHT_OPS_TOKEN')));
+});
 
 return $app;
