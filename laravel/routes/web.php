@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
+use Psr\Log\LoggerInterface;
+use Illuminate\Http\Request;
+
+Route::get('/', function (Request $request, LoggerInterface $log) {
+    $log->info(
+        'User {user} ({ip}) speaks {language}',
+        [
+            'user' => $request->getUser() ?? 'Anonymous',
+            'ip' => $request->getClientIp(),
+            'language' => $request->getDefaultLocale()
+        ]
+    );
+
     return view('welcome');
 });
