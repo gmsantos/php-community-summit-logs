@@ -2,13 +2,23 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class DefaultController extends AbstractController
+class DefaultController
 {
-    public function index()
+    public function index(Request $request, LoggerInterface $log)
     {
-        return new Response('VAI!!');
+        $log->info(
+            'User {user} ({ip}) speaks {language}',
+            [
+                'user' => $request->getUser() ?? 'Anonymous',
+                'ip' => $request->getClientIp(),
+                'language' => $request->getDefaultLocale()
+            ]
+        );
+
+        return new Response('Welcome');
     }
 }
