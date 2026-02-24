@@ -1,0 +1,85 @@
+name: Rector Automated Upgrades
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 10 * * 1' # Runs automatically every Monday at 2:00 AM
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  rector:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false # If one project fails, let the others continue
+      matrix:
+        project: 
+          - drupal
+          - expressive
+          - laravel
+          - lumen
+          - magento
+          - sample
+          - silex
+          - symfony
+          - zend-mvc
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5'
+          tools: php-cs-fixer, rector
+
+      - name: Install all Rector plugins globally at once
+        run: |
+          composer global require --dev \
+              rector/rector \
+              driftingly/rector-laravel \
+              rector/rector-symfony \
+              palantirnet/drupal-rector
+
+      - name: Install dependencies for ${{ matrix.project }}
+        run: |
+          cd ${{ matrix.project }}
+          # Use ignore-platform-reqs so Composer doesn't fail on legacy PHP versions
+          composer install --ignore-platform-reqs --no-interaction --prefer-dist || true
+
+      - name: Run Rector on ${{ matrix.project }}
+        run: |
+          # Only run Rector if a rector.php configuration exists in the directory
+          if [ -f "${{ matrix.project }}/rector.php" ]; then
+            php rector.phar process ${{ matrix.project }}
+          else
+            echo "No rector.php found in ${{ matrix.project }}. Skipping."
+          fi
+
+      - name: Run PHP-CS-Fixer on ${{ matrix.project }}
+        run: |
+          # Checks for a project-specific config; if none exists, applies standard PSR-12 formatting
+          if [ -f "${{ matrix.project }}/.php-cs-fixer.php" ] || [ -f "${{ matrix.project }}/.php-cs-fixer.dist.php" ]; then
+            php-cs-fixer fix ${{ matrix.project }}
+          else
+            echo "No specific config found. Running fallback PSR-12 formatting."
+            php-cs-fixer fix ${{ matrix.project }} --rules=@PSR12 --allow-risky=yes || true
+          fi
+
+      - name: Create Pull Request for ${{ matrix.project }}
+        uses: peter-evans/create-pull-request@v8
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "[Rector] Automated refactoring for ${{ matrix.project }}"
+          title: "🤖 Rector Upgrade: ${{ matrix.project }}"
+          body: |
+            This PR contains automated refactoring upgrades via [Rector](https://github.com/rectorphp/rector) for the `${{ matrix.project }}` directory.
+            
+            Please review the changes and run your test suite before merging.
+          branch: "rector-upgrade/${{ matrix.project }}"
+          base: main
+          labels: "rector, php, refactoring, ${{ matrix.project }}"
+          delete-branch: true
