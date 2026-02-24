@@ -1087,16 +1087,16 @@
         },
         {
             "name": "symfony/form",
-            "version": "v3.3.8",
+            "version": "v3.3.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/form.git",
-                "reference": "36f2059a7b9d8db4f305c284a78848eb5a3dd455"
+                "reference": "eb673d307800ecd792f52453d7fd99abfbfd8621"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/form/zipball/36f2059a7b9d8db4f305c284a78848eb5a3dd455",
-                "reference": "36f2059a7b9d8db4f305c284a78848eb5a3dd455",
+                "url": "https://api.github.com/repos/symfony/form/zipball/eb673d307800ecd792f52453d7fd99abfbfd8621",
+                "reference": "eb673d307800ecd792f52453d7fd99abfbfd8621",
                 "shasum": ""
             },
             "require": {
@@ -1162,7 +1162,10 @@
             ],
             "description": "Symfony Form Component",
             "homepage": "https://symfony.com",
-            "time": "2017-08-03T08:59:45+00:00"
+            "support": {
+                "source": "https://github.com/symfony/form/tree/3.3"
+            },
+            "time": "2018-01-29T09:02:23+00:00"
         },
         {
             "name": "symfony/http-foundation",
@@ -1400,6 +1403,7 @@
                     "type": "tidelift"
                 }
             ],
+            "abandoned": "EnglishInflector from the String component",
             "time": "2020-10-24T10:57:07+00:00"
         },
         {
@@ -1555,27 +1559,22 @@
         },
         {
             "name": "symfony/options-resolver",
-            "version": "v3.3.8",
+            "version": "v3.4.47",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/options-resolver.git",
-                "reference": "ee4e22978fe885b54ee5da8c7964f0a5301abfb6"
+                "reference": "c7efc97a47b2ebaabc19d5b6c6b50f5c37c92744"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/ee4e22978fe885b54ee5da8c7964f0a5301abfb6",
-                "reference": "ee4e22978fe885b54ee5da8c7964f0a5301abfb6",
+                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/c7efc97a47b2ebaabc19d5b6c6b50f5c37c92744",
+                "reference": "c7efc97a47b2ebaabc19d5b6c6b50f5c37c92744",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.5.9|>=7.0.8"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.3-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\OptionsResolver\\": ""
@@ -1605,7 +1604,24 @@
                 "configuration",
                 "options"
             ],
-            "time": "2017-07-29T21:54:42+00:00"
+            "support": {
+                "source": "https://github.com/symfony/options-resolver/tree/v3.4.47"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-10-24T10:57:07+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1951,12 +1967,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php70\\": ""
-                },
                 "files": [
                     "bootstrap.php"
                 ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php70\\": ""
+                },
                 "classmap": [
                     "Resources/stubs"
                 ]
