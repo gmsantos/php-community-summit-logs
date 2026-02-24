@@ -853,6 +853,7 @@
                     "type": "tidelift"
                 }
             ],
+            "abandoned": "symfony/error-handler",
             "time": "2020-10-24T10:57:07+00:00"
         },
         {
@@ -1235,16 +1236,16 @@
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v3.4.48",
+            "version": "v3.4.49",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "f351c07f9b559f07f1f0906263b111ff3baeb9f1"
+                "reference": "5aa72405f5bd5583c36ed6e756acb17d3f98ac40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/f351c07f9b559f07f1f0906263b111ff3baeb9f1",
-                "reference": "f351c07f9b559f07f1f0906263b111ff3baeb9f1",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/5aa72405f5bd5583c36ed6e756acb17d3f98ac40",
+                "reference": "5aa72405f5bd5583c36ed6e756acb17d3f98ac40",
                 "shasum": ""
             },
             "require": {
@@ -1317,7 +1318,7 @@
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/http-kernel/tree/v3.4.48"
+                "source": "https://github.com/symfony/http-kernel/tree/v3.4.49"
             },
             "funding": [
                 {
@@ -1333,7 +1334,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-12T13:01:01+00:00"
+            "time": "2021-05-19T12:06:59+00:00"
         },
         {
             "name": "symfony/inflector",
@@ -1890,12 +1891,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php56\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php56\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2300,16 +2301,16 @@
         },
         {
             "name": "symfony/security",
-            "version": "v3.4.48",
+            "version": "v3.4.49",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/security.git",
-                "reference": "06dbfe48da80e428a434e215d11c992c832e4b88"
+                "reference": "ac1af40e3e0a183f80f0ff8c3d22b18bfb74dbb3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/security/zipball/06dbfe48da80e428a434e215d11c992c832e4b88",
-                "reference": "06dbfe48da80e428a434e215d11c992c832e4b88",
+                "url": "https://api.github.com/repos/symfony/security/zipball/ac1af40e3e0a183f80f0ff8c3d22b18bfb74dbb3",
+                "reference": "ac1af40e3e0a183f80f0ff8c3d22b18bfb74dbb3",
                 "shasum": ""
             },
             "require": {
@@ -2375,7 +2376,7 @@
             "description": "Symfony Security Component",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/security/tree/v3.4.48"
+                "source": "https://github.com/symfony/security/tree/v3.4.49"
             },
             "funding": [
                 {
@@ -2391,7 +2392,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-29T09:39:14+00:00"
+            "abandoned": true,
+            "time": "2021-05-19T12:03:21+00:00"
         },
         {
             "name": "symfony/stopwatch",
