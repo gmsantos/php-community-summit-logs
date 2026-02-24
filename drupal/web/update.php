@@ -18,11 +18,11 @@ $autoloader = require_once 'autoload.php';
 // segmentation faults.
 require_once 'core/includes/bootstrap.inc';
 if (drupal_valid_test_ua()) {
-  gc_collect_cycles();
-  gc_disable();
+    gc_collect_cycles();
+    gc_disable();
 }
 
-$kernel = new UpdateKernel('prod', $autoloader, FALSE);
+$kernel = new UpdateKernel('prod', $autoloader, false);
 $request = Request::createFromGlobals();
 
 $response = $kernel->handle($request);

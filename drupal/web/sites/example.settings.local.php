@@ -30,7 +30,7 @@
  *
  * @see https://wiki.php.net/rfc/expectations
  */
-assert_options(ASSERT_ACTIVE, TRUE);
+assert_options(ASSERT_ACTIVE, true);
 \Drupal\Component\Assertion\Handle::register();
 
 /**
@@ -49,8 +49,8 @@ $config['system.logging']['error_level'] = 'verbose';
 /**
  * Disable CSS and JS aggregation.
  */
-$config['system.performance']['css']['preprocess'] = FALSE;
-$config['system.performance']['js']['preprocess'] = FALSE;
+$config['system.performance']['css']['preprocess'] = false;
+$config['system.performance']['js']['preprocess'] = false;
 
 /**
  * Disable the render cache (this includes the page cache).
@@ -90,7 +90,7 @@ $config['system.performance']['js']['preprocess'] = FALSE;
  * During development it can be useful to install test extensions for debugging
  * purposes.
  */
-$settings['extension_discovery_scan_tests'] = TRUE;
+$settings['extension_discovery_scan_tests'] = true;
 
 /**
  * Enable access to rebuild.php.
@@ -100,7 +100,7 @@ $settings['extension_discovery_scan_tests'] = TRUE;
  * be gained by generating a query string from rebuild_token_calculator.sh and
  * using these parameters in a request to rebuild.php.
  */
-$settings['rebuild_access'] = TRUE;
+$settings['rebuild_access'] = true;
 
 /**
  * Skip file system permissions hardening.
@@ -112,4 +112,4 @@ $settings['rebuild_access'] = TRUE;
  * user pulling in the changes won't have permissions to modify files in the
  * directory.
  */
-$settings['skip_permissions_hardening'] = TRUE;
+$settings['skip_permissions_hardening'] = true;
