@@ -1,0 +1,91 @@
+version: 2
+updates:
+  # Drupal
+  - package-ecosystem: "composer"
+    directory: "/drupal"
+    schedule:
+      interval: "weekly"
+    groups:
+      drupal-all-dependencies:
+        patterns:
+          - "*"
+
+  # Expressive
+  - package-ecosystem: "composer"
+    directory: "/expressive"
+    schedule:
+      interval: "weekly"
+    groups:
+      expressive-all-dependencies:
+        patterns:
+          - "*"
+
+  # Laravel
+  - package-ecosystem: "composer"
+    directory: "/laravel"
+    schedule:
+      interval: "weekly"
+    groups:
+      laravel-all-dependencies:
+        patterns:
+          - "*"
+
+  # Lumen
+  - package-ecosystem: "composer"
+    directory: "/lumen"
+    schedule:
+      interval: "weekly"
+    groups:
+      lumen-all-dependencies:
+        patterns:
+          - "*"
+
+  # Magento
+  - package-ecosystem: "composer"
+    directory: "/magento"
+    schedule:
+      interval: "weekly"
+    groups:
+      magento-all-dependencies:
+        patterns:
+          - "*"
+
+  # Samples
+  - package-ecosystem: "composer"
+    directory: "/samples"
+    schedule:
+      interval: "weekly"
+    groups:
+      samples-all-dependencies:
+        patterns:
+          - "*"
+
+  # Silex
+  - package-ecosystem: "composer"
+    directory: "/silex"
+    schedule:
+      interval: "weekly"
+    groups:
+      silex-all-dependencies:
+        patterns:
+          - "*"
+
+  # Symfony
+  - package-ecosystem: "composer"
+    directory: "/symfony"
+    schedule:
+      interval: "weekly"
+    groups:
+      symfony-all-dependencies:
+        patterns:
+          - "*"
+
+  # Zend-mvc
+  - package-ecosystem: "composer"
+    directory: "/zend-mvc"
+    schedule:
+      interval: "weekly"
+    groups:
+      zend-mvc-all-dependencies:
+        patterns:
+          - "*"
