@@ -54,7 +54,7 @@ jobs:
         run: |
           # Only run Rector if a rector.php configuration exists in the directory
           if [ -f "${{ matrix.project }}/rector.php" ]; then
-            php rector.phar process ${{ matrix.project }}
+            rector process ${{ matrix.project }}
           else
             echo "No rector.php found in ${{ matrix.project }}. Skipping."
           fi
