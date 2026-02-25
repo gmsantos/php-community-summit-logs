@@ -9,7 +9,6 @@ use Monolog\Processor\PsrLogMessageProcessor;
 use Monolog\Processor\IntrospectionProcessor;
 use Monolog\Processor\TagProcessor;
 
-
 $logger = new Logger('my_logger');
 
 $handler = new StreamHandler(__DIR__.'/my_app.log');
@@ -27,7 +26,7 @@ $logger->info('Starting csv file import', ['file' => '/path/file.csv']);
 $logger->debug('Reading csv file');
 $logger->notice('Skip header', ['line' => 1]);
 
-foreach (range(2,4) as $value) {
+foreach (range(2, 4) as $value) {
     $logger->debug('Loading row {line}', ['line' => $value, 'data' => ['some' => 'data']]);
 }
 
