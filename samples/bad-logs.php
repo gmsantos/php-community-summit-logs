@@ -18,7 +18,7 @@ $logger->info('info');
 $logger->debug('debug');
 $logger->notice('NOTICE');
 
-foreach (range(2,4) as $value) {
+foreach (range(2, 4) as $value) {
     $logger->debug($value);
 }
 

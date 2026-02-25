@@ -15,6 +15,7 @@ $logger->info('Hello World!');
 // Second slide - Adding Handlers
 
 use Monolog\Handler\RotatingFileHandler;
+
 $logger->pushHandler(new RotatingFileHandler(__DIR__.'/error.log', 3, Logger::ERROR));
 
 $logger->debug('Debug event');
@@ -23,6 +24,7 @@ $logger->error('Error event');
 // Third slide - Adding Processors
 
 use Monolog\Processor\IntrospectionProcessor;
+
 $logger->pushProcessor(new IntrospectionProcessor(Logger::WARNING));
 
 $logger->notice('Important event');
@@ -35,6 +37,7 @@ $data = ['user' => 'TDC'];
 $logger->info('User '. $data['user'] .' logged', $data); // Sem PsrProcessor
 
 use Monolog\Processor\PsrLogMessageProcessor;
+
 $logger->pushProcessor(new PsrLogMessageProcessor());
 
 $logger->info('User {user} logged', $data); // Com PsrProcessor
