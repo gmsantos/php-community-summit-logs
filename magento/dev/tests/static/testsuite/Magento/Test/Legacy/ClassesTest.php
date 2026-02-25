@@ -20,7 +20,7 @@ class ClassesTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $file
              */
-            function ($file) {
+            function ($file): void {
                 $classes = \Magento\Framework\App\Utility\Classes::collectPhpCodeClasses(file_get_contents($file));
                 $this->_assertNonFactoryName($classes, $file);
             },
@@ -42,7 +42,7 @@ class ClassesTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $path
              */
-            function ($path) {
+            function ($path): void {
                 $xml = simplexml_load_file($path);
 
                 $classes = \Magento\Framework\App\Utility\Classes::collectClassesInConfig($xml);
@@ -62,7 +62,7 @@ class ClassesTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $path
              */
-            function ($path) {
+            function ($path): void {
                 $xml = simplexml_load_file($path);
                 $classes = \Magento\Framework\App\Utility\Classes::collectLayoutClasses($xml);
                 foreach (\Magento\Framework\App\Utility\Classes::getXmlAttributeValues(

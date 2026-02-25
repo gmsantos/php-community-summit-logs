@@ -156,7 +156,7 @@ class CookieManagerTest extends \Magento\TestFramework\TestCase\WebapiAbstract
      */
     private function findCookie($cookieName, $cookies)
     {
-        foreach ($cookies as $cookieIndex => $cookie) {
+        foreach ($cookies as $cookie) {
             if ($cookie['name'] === $cookieName) {
                 return $cookie;
             }

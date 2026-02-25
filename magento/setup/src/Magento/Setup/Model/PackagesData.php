@@ -452,7 +452,7 @@ class PackagesData
     {
         if ($this->metapackagesMap === null) {
             $packages = $this->getPackagesJson();
-            array_walk($packages, function ($packageVersions) {
+            array_walk($packages, function ($packageVersions): void {
                 $package = array_shift($packageVersions);
                 if ($package['type'] == \Magento\Framework\Composer\ComposerInformation::METAPACKAGE_PACKAGE_TYPE
                     && isset($package['require'])

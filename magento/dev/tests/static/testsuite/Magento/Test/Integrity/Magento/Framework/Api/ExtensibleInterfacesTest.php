@@ -27,7 +27,7 @@ class ExtensibleInterfacesTest extends \PHPUnit_Framework_TestCase
         /**
          * @param string $filename
          */
-            function ($filename) {
+            function ($filename): void {
                 $errors = [];
                 $fileContent = file_get_contents($filename);
                 $extendsFromExtensibleDataInterface = preg_match(
@@ -161,7 +161,7 @@ class ExtensibleInterfacesTest extends \PHPUnit_Framework_TestCase
         /**
          * @param string $filename
          */
-            function ($filename) {
+            function ($filename): void {
                 $errors = [];
                 $fileContent = file_get_contents($filename);
                 $extensibleClassPattern = 'class [^\{]+extends[^\{]+AbstractExtensible';

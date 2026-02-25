@@ -323,7 +323,7 @@ class ProductCustomOptionRepositoryTest extends WebapiAbstract
         }
 
         $values = [];
-        foreach ($option->getValues() as $key => $value) {
+        foreach ($option->getValues() as $value) {
             $values[] =
                 [
                     'price' => $value->getPrice(),

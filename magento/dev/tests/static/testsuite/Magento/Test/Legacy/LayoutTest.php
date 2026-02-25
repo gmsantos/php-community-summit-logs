@@ -92,7 +92,7 @@ class LayoutTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $layoutFile
              */
-            function ($layoutFile) {
+            function ($layoutFile): void {
                 $layoutXml = simplexml_load_file($layoutFile);
 
                 $this->_testObsoleteReferences($layoutXml);
@@ -211,7 +211,7 @@ class LayoutTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $layoutFile
              */
-            function ($layoutFile) {
+            function ($layoutFile): void {
                 $layoutXml = simplexml_load_file($layoutFile);
                 $methodFilter = '@method!="' . implode('" and @method!="', $this->getAllowedActionNodeMethods()) . '"';
                 foreach ($layoutXml->xpath('//action[' . $methodFilter . ']') as $node) {

@@ -219,7 +219,7 @@ class InterfaceTest extends \PHPUnit_Framework_TestCase
         $adapter->open($image);
         try {
             call_user_func_array([$adapter, 'save'], $tempPath);
-            $tempPath = join('', $tempPath);
+            $tempPath = implode('', $tempPath);
             $this->assertFileExists($tempPath);
             unlink($tempPath);
         } catch (\Exception $e) {
@@ -302,7 +302,7 @@ class InterfaceTest extends \PHPUnit_Framework_TestCase
         $colorAfter = $adapter->getColorAt($newPixel['x'], $newPixel['y']);
 
         $result = $this->_compareColors($colorBefore, $colorAfter);
-        $this->assertTrue($result, join(',', $colorBefore) . ' not equals ' . join(',', $colorAfter));
+        $this->assertTrue($result, implode(',', $colorBefore) . ' not equals ' . implode(',', $colorAfter));
     }
 
     /**
@@ -385,7 +385,7 @@ class InterfaceTest extends \PHPUnit_Framework_TestCase
         $colorAfter = $adapter->getColorAt($pixel['x'], $pixel['y']);
 
         $result = $this->_compareColors($colorBefore, $colorAfter);
-        $message = join(',', $colorBefore) . ' not equals ' . join(',', $colorAfter);
+        $message = implode(',', $colorBefore) . ' not equals ' . implode(',', $colorAfter);
         $this->assertFalse($result, $message);
     }
 

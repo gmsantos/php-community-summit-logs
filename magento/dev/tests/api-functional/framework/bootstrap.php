@@ -53,11 +53,11 @@ $shell = new \Magento\Framework\Shell(new \Magento\Framework\Shell\CommandRender
 
 $installConfigFile = $settings->getAsConfigFile('TESTS_INSTALL_CONFIG_FILE');
 if (!file_exists($installConfigFile)) {
-    $installConfigFile = $installConfigFile . '.dist';
+    $installConfigFile .= '.dist';
 }
 $globalConfigFile = $settings->getAsConfigFile('TESTS_GLOBAL_CONFIG_FILE');
 if (!file_exists($installConfigFile)) {
-    $installConfigFile = $installConfigFile . '.dist';
+    $installConfigFile .= '.dist';
 }
 $dirList = new \Magento\Framework\App\Filesystem\DirectoryList(BP);
 $application =  new \Magento\TestFramework\WebApiApplication(

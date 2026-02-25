@@ -70,7 +70,7 @@ class Form extends Block
         parent::__construct($element, $blockFactory, $browser, $config);
         $this->baseUrl = $this->browser->getUrl();
         if (substr($this->baseUrl, -1) !== '/') {
-            $this->baseUrl = $this->baseUrl . '/';
+            $this->baseUrl .= '/';
         }
     }
 

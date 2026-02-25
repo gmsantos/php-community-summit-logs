@@ -19,7 +19,7 @@
  */
 define('DEBUG_ROUTER', false);
 
-$debug = function ($val) {
+$debug = function ($val): void {
 
     if (!DEBUG_ROUTER) {
         return;

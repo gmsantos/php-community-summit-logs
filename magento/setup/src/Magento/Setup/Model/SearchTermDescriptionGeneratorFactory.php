@@ -76,7 +76,7 @@ class SearchTermDescriptionGeneratorFactory
                 : (int)$this->fixtureConfig->getValue('websites', 1);
             array_walk(
                 $searchTermsConfig,
-                function (&$searchTerm, $key, $websitesCount) {
+                function (&$searchTerm, $key, $websitesCount): void {
                     $searchTerm['count'] *= $websitesCount;
                 },
                 $websitesCount

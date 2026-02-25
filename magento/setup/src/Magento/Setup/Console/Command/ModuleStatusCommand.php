@@ -53,7 +53,7 @@ class ModuleStatusCommand extends AbstractSetupCommand
         if (count($enabledModules) === 0) {
             $output->writeln('None');
         } else {
-            $output->writeln(join("\n", $enabledModules));
+            $output->writeln(implode("\n", $enabledModules));
         }
         $output->writeln('');
 
@@ -63,7 +63,7 @@ class ModuleStatusCommand extends AbstractSetupCommand
         if (count($disabledModules) === 0) {
             $output->writeln('None');
         } else {
-            $output->writeln(join("\n", $disabledModules));
+            $output->writeln(implode("\n", $disabledModules));
         }
     }
 }

@@ -65,7 +65,7 @@ class CategoryTest extends \Magento\TestFramework\TestCase\AbstractBackendContro
             }
         }
 
-        $this->assertEmpty($errors, "\n" . join("\n", $errors));
+        $this->assertEmpty($errors, "\n" . implode("\n", $errors));
     }
 
     /**

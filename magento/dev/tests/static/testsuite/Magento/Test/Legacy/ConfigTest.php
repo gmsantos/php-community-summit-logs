@@ -18,7 +18,7 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $file
              */
-            function ($file) {
+            function ($file): void {
                 $obsoleteNodes = [];
                 $obsoleteNodesFiles = glob(__DIR__ . '/_files/obsolete_config_nodes*.php');
                 foreach ($obsoleteNodesFiles as $obsoleteNodesFile) {

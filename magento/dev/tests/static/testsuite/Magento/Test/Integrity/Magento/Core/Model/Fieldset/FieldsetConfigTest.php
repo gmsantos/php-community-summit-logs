@@ -24,7 +24,7 @@ class FieldsetConfigTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $configFile
              */
-            function ($configFile) {
+            function ($configFile): void {
                 $dom = new \DOMDocument();
                 $dom->loadXML(file_get_contents($configFile));
                 $schema = $this->urnResolver->getRealPath(

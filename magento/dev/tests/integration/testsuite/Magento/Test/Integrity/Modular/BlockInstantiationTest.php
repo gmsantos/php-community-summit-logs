@@ -19,7 +19,7 @@ class BlockInstantiationTest extends \Magento\TestFramework\TestCase\AbstractInt
     {
         $invoker = new \Magento\Framework\App\Utility\AggregateInvoker($this);
         $invoker(
-            function ($module, $class, $area) {
+            function ($module, $class, $area): void {
                 $this->assertNotEmpty($module);
                 $this->assertTrue(class_exists($class), "Block class: {$class}");
                 \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->get(

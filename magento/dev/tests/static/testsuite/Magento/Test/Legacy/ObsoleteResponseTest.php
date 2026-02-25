@@ -41,7 +41,7 @@ class ObsoleteResponseTest extends \PHPUnit_Framework_TestCase
     {
         $invoker = new \Magento\Framework\App\Utility\AggregateInvoker($this);
         $invoker(
-            function ($file) {
+            function ($file): void {
                 $content = file_get_contents($file);
                 foreach ($this->obsoleteMethods as $method) {
                     $quotedMethod = preg_quote($method, '/');

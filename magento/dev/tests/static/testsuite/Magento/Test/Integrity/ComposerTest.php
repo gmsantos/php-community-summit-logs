@@ -51,7 +51,7 @@ class ComposerTest extends \PHPUnit_Framework_TestCase
          * @param string $dir
          * @param string $packageType
          */
-            function ($dir, $packageType) {
+            function ($dir, $packageType): void {
                 $file = $dir . '/composer.json';
                 $this->assertFileExists($file);
                 $this->validateComposerJsonFile($dir);
@@ -297,7 +297,7 @@ class ComposerTest extends \PHPUnit_Framework_TestCase
                     . "Consider adding them to 'require-dev' section (if needed for child components only),"
                     . " to 'replace' section (if they are present in the project),"
                     . " to 'require' section (if needed for the skeleton).\n"
-                    . join("\n", $errors)
+                    . implode("\n", $errors)
                 );
             }
         }
@@ -399,12 +399,12 @@ class ComposerTest extends \PHPUnit_Framework_TestCase
             $this->assertEmpty(
                 $nonDeclaredDependencies,
                 'Following dependencies are not declared in the root composer.json: '
-                . join(', ', $nonDeclaredDependencies)
+                . implode(', ', $nonDeclaredDependencies)
             );
             $this->assertEmpty(
                 $nonexistentDependencies,
                 'Following dependencies declared in the root composer.json do not exist: '
-                . join(', ', $nonexistentDependencies)
+                . implode(', ', $nonexistentDependencies)
             );
         }
     }

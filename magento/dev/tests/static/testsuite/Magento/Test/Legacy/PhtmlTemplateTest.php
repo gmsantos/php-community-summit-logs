@@ -18,7 +18,7 @@ class PhtmlTemplateTest extends \PHPUnit_Framework_TestCase
          *
          * @param string $file
          */
-            function ($file) {
+            function ($file): void {
                 $this->assertNotRegExp(
                     '/this->(?!helper)\S*/iS',
                     file_get_contents($file),
@@ -45,7 +45,7 @@ class PhtmlTemplateTest extends \PHPUnit_Framework_TestCase
              *
              * @param string $file
              */
-            function ($file) {
+            function ($file): void {
                 $this->assertNotRegexp(
                     '/block->_[^_]+\S*\(/iS',
                     file_get_contents($file),
@@ -67,7 +67,7 @@ class PhtmlTemplateTest extends \PHPUnit_Framework_TestCase
          *
          * @param string $file
          */
-            function ($file) {
+            function ($file): void {
                 $this->assertNotRegexp(
                     '/type="text\/javascript"/',
                     file_get_contents($file),

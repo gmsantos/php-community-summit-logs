@@ -101,7 +101,7 @@ class LayoutTest extends \PHPUnit_Framework_TestCase
             /**
              * @param \Magento\Framework\View\Design\ThemeInterface $theme
              */
-            function (\Magento\Framework\View\Design\ThemeInterface $theme) {
+            function (\Magento\Framework\View\Design\ThemeInterface $theme): void {
                 $xml = $this->_composeXml($theme);
 
                 $xpath = '/layouts/*[@design_abstraction]';
@@ -135,7 +135,7 @@ class LayoutTest extends \PHPUnit_Framework_TestCase
             /**
              * Check whether page types are declared only in layout update files allowed for it - base ones
              */
-            function (\Magento\Framework\View\File $layout) {
+            function (\Magento\Framework\View\File $layout): void {
                 $content = simplexml_load_file($layout->getFilename());
                 $this->assertEmpty(
                     $content->xpath(\Magento\Framework\View\Model\Layout\Merge::XPATH_HANDLE_DECLARATION),
@@ -190,7 +190,7 @@ class LayoutTest extends \PHPUnit_Framework_TestCase
              * @param \Magento\Framework\View\File $themeFile
              * @param \Magento\Framework\View\Design\ThemeInterface $theme
              */
-            function ($themeFile, $theme) {
+            function ($themeFile, $theme): void {
                 $baseFiles = self::_getCachedFiles(
                     $theme->getArea(),
                     'Magento\Framework\View\File\Collector\Base',
@@ -218,7 +218,7 @@ class LayoutTest extends \PHPUnit_Framework_TestCase
              * @param \Magento\Framework\View\File $themeFile
              * @param \Magento\Framework\View\Design\ThemeInterface $theme
              */
-            function ($themeFile, $theme) {
+            function ($themeFile, $theme): void {
                 // Find an ancestor theme, where a file is to be overridden
                 $ancestorTheme = $theme;
                 while ($ancestorTheme = $ancestorTheme->getParentTheme()) {

@@ -28,7 +28,7 @@ class InstallUpgradeTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $file
              */
-            function ($file) {
+            function ($file): void {
                 $this->assertStringStartsNotWith(
                     'install-',
                     basename($file),

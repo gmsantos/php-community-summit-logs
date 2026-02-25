@@ -43,11 +43,11 @@ class EventManagerTest extends \PHPUnit_Framework_TestCase
     public function testFireEvent($reverseOrder, $expectedSubscribers)
     {
         $actualSubscribers = [];
-        $callback = function () use (&$actualSubscribers) {
+        $callback = function () use (&$actualSubscribers): void {
             $actualSubscribers[] = 'subscriberOne';
         };
         $this->_subscriberOne->expects($this->once())->method('testEvent')->will($this->returnCallback($callback));
-        $callback = function () use (&$actualSubscribers) {
+        $callback = function () use (&$actualSubscribers): void {
             $actualSubscribers[] = 'subscriberTwo';
         };
         $this->_subscriberTwo->expects($this->once())->method('testEvent')->will($this->returnCallback($callback));

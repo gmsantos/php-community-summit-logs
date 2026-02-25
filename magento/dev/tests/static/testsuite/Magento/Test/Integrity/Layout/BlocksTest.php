@@ -57,14 +57,14 @@ class BlocksTest extends \PHPUnit_Framework_TestCase
              * @param string $file
              * @throws \Exception|PHPUnit_Framework_ExpectationFailedException
              */
-            function ($alias, $file) {
+            function ($alias, $file): void {
                 if (isset(self::$_containerAliases[$alias])) {
                     if (!isset(self::$_blockAliases[$alias])) {
                         $this->fail(
                             "Element with alias '{$alias}' is used as a block in file '{$file}' " .
                             "via getChildBlock() method," .
                             " while '{$alias}' alias is declared as a container in file(s): " .
-                            join(
+                            implode(
                                 ', ',
                                 self::$_containerAliases[$alias]['files']
                             )
@@ -75,10 +75,10 @@ class BlocksTest extends \PHPUnit_Framework_TestCase
                             "via getChildBlock() method." .
                             " It's impossible to determine explicitly whether the element is a block or a container, " .
                             "as it is declared as a container in file(s): " .
-                            join(
+                            implode(
                                 ', ',
                                 self::$_containerAliases[$alias]['files']
-                            ) . " and as a block in file(s): " . join(
+                            ) . " and as a block in file(s): " . implode(
                                 ', ',
                                 self::$_blockAliases[$alias]['files']
                             )

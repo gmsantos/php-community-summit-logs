@@ -16,7 +16,7 @@ class SystemConfigTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $configFile
              */
-            function ($configFile) {
+            function ($configFile): void {
                 $dom = new \DOMDocument();
                 $dom->loadXML(file_get_contents($configFile));
                 $urnResolver = new \Magento\Framework\Config\Dom\UrnResolver();

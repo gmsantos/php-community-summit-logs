@@ -18,7 +18,7 @@ class ObsoleteMenuTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $menuFile
              */
-            function ($menuFile) {
+            function ($menuFile): void {
                 $menuXml = simplexml_load_file($menuFile);
                 $xpath = '/config/menu/*[boolean(./children) or boolean(./title) or boolean(./action)]';
                 $this->assertEmpty(

@@ -67,8 +67,8 @@ class Pattern
     private function generateAttribute($index, $optionsPerAttribute)
     {
         $attribute = $this->attributePattern; // copy pattern
-        $attribute['attribute_code'] = $attribute['attribute_code'] . $index;
-        $attribute['frontend_label'] = $attribute['frontend_label'] . $index;
+        $attribute['attribute_code'] .= $index;
+        $attribute['frontend_label'] .= $index;
         $attribute['options'] = ['option' => $this->generateOptions($optionsPerAttribute)];
         $attribute['default_option'] = $attribute['options']['option'][0]['label'];
         return $attribute;

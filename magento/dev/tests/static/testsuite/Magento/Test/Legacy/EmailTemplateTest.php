@@ -18,7 +18,7 @@ class EmailTemplateTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $file
              */
-            function ($file) {
+            function ($file): void {
                 $this->assertNotRegExp(
                     '/\{\{htmlescape.*?\}\}/i',
                     file_get_contents($file),

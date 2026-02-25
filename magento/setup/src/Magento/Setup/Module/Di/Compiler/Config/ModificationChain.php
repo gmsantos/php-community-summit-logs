@@ -20,7 +20,7 @@ class ModificationChain implements ModificationInterface
     {
         array_walk(
             $modificationsList,
-            function ($modification) {
+            function ($modification): void {
                 if (!$modification instanceof ModificationInterface) {
                     throw new \InvalidArgumentException('Wrong modifier provided');
                 }

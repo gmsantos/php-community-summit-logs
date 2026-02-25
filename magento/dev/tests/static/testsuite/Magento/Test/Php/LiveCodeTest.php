@@ -87,7 +87,7 @@ class LiveCodeTest extends PHPUnit_Framework_TestCase
         }
         array_walk(
             $changedFiles,
-            function (&$file) {
+            function (&$file): void {
                 $file = BP . '/' . $file;
             }
         );

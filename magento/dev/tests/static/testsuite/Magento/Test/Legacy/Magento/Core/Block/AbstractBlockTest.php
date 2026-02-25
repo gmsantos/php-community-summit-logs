@@ -22,7 +22,7 @@ class AbstractBlockTest extends \PHPUnit_Framework_TestCase
              *
              * @param string $file
              */
-            function ($file) {
+            function ($file): void {
                 $result = \Magento\Framework\App\Utility\Classes::getAllMatches(
                     file_get_contents($file),
                     "/(->getChildHtml\([^,()]+, ?[^,()]+,)/i"

@@ -59,7 +59,7 @@ class ProductLinkRepositoryTest extends \Magento\TestFramework\TestCase\WebapiAb
         /** @var \Magento\Catalog\Api\ProductLinkManagementInterface $linkManagement */
         $linkManagement = $this->objectManager->get('Magento\Catalog\Api\ProductLinkManagementInterface');
         $actual = $linkManagement->getLinkedItemsByType($productSku, $linkType);
-        array_walk($actual, function (&$item) {
+        array_walk($actual, function (&$item): void {
             $item = $item->__toArray();
         });
         $this->assertEquals($productData, $actual[2]);
