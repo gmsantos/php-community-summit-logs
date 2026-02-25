@@ -57,7 +57,7 @@ use Monolog\Logger;
 use Monolog\Processor\PsrLogMessageProcessor;
 use App\Logs\InsightOpsHandler;
 
-$app->configureMonologUsing(function (Logger $monolog) {
+$app->configureMonologUsing(function (Logger $monolog): void {
     $monolog->pushHandler(new StreamHandler(__DIR__.'/../storage/logs/laravel.log'));
     $monolog->pushProcessor(new PsrLogMessageProcessor());
 
