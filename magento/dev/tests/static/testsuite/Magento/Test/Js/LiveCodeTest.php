@@ -88,7 +88,7 @@ class LiveCodeTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $filename
              */
-            function ($filename) {
+            function ($filename): void {
                 $cmd = new \Magento\TestFramework\Inspection\JsHint\Command($filename, self::$_reportFile);
                 $result = false;
                 try {

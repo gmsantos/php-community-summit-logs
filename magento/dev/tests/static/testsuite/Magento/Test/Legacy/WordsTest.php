@@ -34,7 +34,7 @@ class WordsTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $file
              */
-            function ($file) {
+            function ($file): void {
                 $words = self::$_wordsFinder->findWords(realpath($file));
                 if ($words) {
                     $this->fail("Found words: '" . implode("', '", $words) . "' in '{$file}' file");

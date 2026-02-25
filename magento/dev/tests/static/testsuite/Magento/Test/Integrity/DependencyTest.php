@@ -272,7 +272,7 @@ class DependencyTest extends \PHPUnit_Framework_TestCase
              * @param string $fileType
              * @param string $file
              */
-            function ($fileType, $file) {
+            function ($fileType, $file): void {
                 // Validates file when it is belonged to default themes
                 $componentRegistrar = new ComponentRegistrar();
                 foreach ($componentRegistrar->getPaths(ComponentRegistrar::THEME) as $themeDir) {

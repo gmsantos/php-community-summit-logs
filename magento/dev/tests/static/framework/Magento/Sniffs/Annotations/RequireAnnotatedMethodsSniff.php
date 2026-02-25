@@ -358,7 +358,7 @@ class RequireAnnotatedMethodsSniff implements PHP_CodeSniffer_Sniff
                     // Check return type (can be multiple, separated by '|').
                     $typeNames = explode('|', $content);
                     $suggestedNames = [];
-                    foreach ($typeNames as $i => $typeName) {
+                    foreach ($typeNames as $typeName) {
                         $suggestedName = $this->helper->suggestType($typeName);
                         if (in_array($suggestedName, $suggestedNames) === false) {
                             $suggestedNames[] = $suggestedName;

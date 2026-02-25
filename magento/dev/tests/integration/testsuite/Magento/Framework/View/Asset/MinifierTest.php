@@ -147,7 +147,7 @@ class MinifierTest extends \PHPUnit_Framework_TestCase
     {
         $this->_testCssMinification(
             '/frontend/FrameworkViewMinifier/default/en_US/css/styles.css',
-            function ($path) {
+            function ($path): void {
                 $content = file_get_contents($path);
                 $this->assertNotEmpty($content);
                 $this->assertContains('FrameworkViewMinifier/frontend', $content);
@@ -170,7 +170,7 @@ class MinifierTest extends \PHPUnit_Framework_TestCase
     {
         $this->_testCssMinification(
             '/frontend/FrameworkViewMinifier/default/en_US/css/styles.min.css',
-            function ($path) {
+            function ($path): void {
                 $this->assertEquals(
                     file_get_contents(
                         dirname(__DIR__)
@@ -190,7 +190,7 @@ class MinifierTest extends \PHPUnit_Framework_TestCase
     {
         $this->_testCssMinification(
             '/frontend/FrameworkViewMinifier/default/en_US/css/preminified-styles.min.css',
-            function ($path) {
+            function ($path): void {
                 $content = file_get_contents($path);
                 $this->assertNotEmpty($content);
                 $this->assertContains('Magento/backend', $content);

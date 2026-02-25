@@ -16,7 +16,7 @@ class TemplateFilesTest extends \Magento\TestFramework\TestCase\AbstractIntegrit
     {
         $invoker = new \Magento\Framework\App\Utility\AggregateInvoker($this);
         $invoker(
-            function ($module, $template, $class, $area) {
+            function ($module, $template, $class, $area): void {
                 \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->get(
                     'Magento\Framework\View\DesignInterface'
                 )->setDefaultDesignTheme();

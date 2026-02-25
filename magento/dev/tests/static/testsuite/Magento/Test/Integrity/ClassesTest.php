@@ -33,7 +33,7 @@ class ClassesTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $file
              */
-            function ($file) {
+            function ($file): void {
                 $contents = file_get_contents($file);
                 $classes = Classes::getAllMatches(
                     $contents,
@@ -106,7 +106,7 @@ class ClassesTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $path
              */
-            function ($path) {
+            function ($path): void {
                 $classes = Classes::collectClassesInConfig(simplexml_load_file($path));
                 $this->_assertClassesExist($classes, $path);
             },
@@ -121,7 +121,7 @@ class ClassesTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $path
              */
-            function ($path) {
+            function ($path): void {
                 $xml = simplexml_load_file($path);
 
                 $classes = Classes::getXmlNodeValues(
@@ -209,7 +209,7 @@ class ClassesTest extends \PHPUnit_Framework_TestCase
              *
              * @param array $file
              */
-            function ($file) {
+            function ($file): void {
                 $relativePath = str_replace(BP . "/", "", $file);
                 // exceptions made for fixture files from tests
                 if (strpos($relativePath, '/_files/') !== false) {
@@ -287,7 +287,7 @@ class ClassesTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $file
              */
-            function ($file) {
+            function ($file): void {
                 $relativePath = str_replace(BP, "", $file);
                 // Due to the examples given with the regex patterns, we skip this test file itself
                 if ($relativePath == "/dev/tests/static/testsuite/Magento/Test/Integrity/ClassesTest.php") {

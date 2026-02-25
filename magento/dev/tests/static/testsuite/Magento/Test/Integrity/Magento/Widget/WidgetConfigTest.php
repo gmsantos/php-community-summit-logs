@@ -24,7 +24,7 @@ class WidgetConfigTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $configFile
              */
-            function ($configFile) {
+            function ($configFile): void {
                 $schema = $this->urnResolver->getRealPath('urn:magento:module:Magento_Widget:etc/widget.xsd');
                 $this->_validateFileExpectSuccess($configFile, $schema);
             },

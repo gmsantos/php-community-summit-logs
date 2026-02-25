@@ -15,7 +15,7 @@ class CopyrightTest extends \PHPUnit_Framework_TestCase
     {
         $invoker = new \Magento\Framework\App\Utility\AggregateInvoker($this);
         $invoker(
-            function ($filename) {
+            function ($filename): void {
                 $fileText = file_get_contents($filename);
                 if (strpos($fileText, 'Copyright © 2013-' . date('Y')) === false) {
                     $this->fail('Copyright is missing or has wrong year in ' . $filename);
@@ -35,7 +35,7 @@ class CopyrightTest extends \PHPUnit_Framework_TestCase
         }
         array_walk(
             $changedFiles,
-            function (&$file) {
+            function (&$file): void {
                 $file = [BP . '/' . $file];
             }
         );

@@ -20,7 +20,7 @@ class XmlTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $file
              */
-            function ($file) {
+            function ($file): void {
                 $xml = simplexml_load_file($file);
                 $nodes = $xml->xpath('/widgets/*[@type]') ?: [];
                 /** @var \SimpleXMLElement $node */
@@ -40,7 +40,7 @@ class XmlTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $file
              */
-            function ($file) {
+            function ($file): void {
                 $xml = simplexml_load_file($file);
                 $this->assertSame(
                     [],

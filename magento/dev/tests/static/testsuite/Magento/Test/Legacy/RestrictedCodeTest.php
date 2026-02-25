@@ -81,7 +81,7 @@ class RestrictedCodeTest extends \PHPUnit_Framework_TestCase
             }
         }
         $invoker(
-            function ($file) {
+            function ($file): void {
                 $this->_testRestrictedClasses($file);
             },
             $testFiles

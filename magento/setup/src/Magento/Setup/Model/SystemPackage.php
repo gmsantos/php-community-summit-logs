@@ -213,7 +213,7 @@ class SystemPackage
                 if (preg_match('/^[0-9].[0-9].[0-9]$/', $version['id']) || strpos($version['name'], 'current')) {
                     $version['stable'] = true;
                 } else {
-                    $version['name'] = $version['name'] . ' (unstable version)';
+                    $version['name'] .= ' (unstable version)';
                     $version['stable'] = false;
                 }
 

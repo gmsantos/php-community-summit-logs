@@ -459,7 +459,7 @@ class ConfigurableProductsFixture extends Fixture
         $attributeOptions = range(1, $this->getConfigurableProductsVariationsValue());
         array_walk(
             $attributeOptions,
-            function (&$item, $key) {
+            function (&$item, $key): void {
                 $item = 'option ' . ($key + 1);
             }
         );

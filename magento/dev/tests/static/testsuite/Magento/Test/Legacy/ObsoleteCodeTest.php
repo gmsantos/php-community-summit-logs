@@ -115,7 +115,7 @@ class ObsoleteCodeTest extends \PHPUnit_Framework_TestCase
             unset($changedFiles[BP . $blacklistFile]);
         }
         $invoker(
-            function ($file) {
+            function ($file): void {
                 $content = file_get_contents($file);
                 $this->_testObsoleteClasses($content);
                 $this->_testObsoleteNamespaces($content);
@@ -136,7 +136,7 @@ class ObsoleteCodeTest extends \PHPUnit_Framework_TestCase
     {
         $invoker = new AggregateInvoker($this);
         $invoker(
-            function ($file) {
+            function ($file): void {
                 $this->_testObsoletePaths($file);
             },
             Files::init()->getPhpFiles()
@@ -147,7 +147,7 @@ class ObsoleteCodeTest extends \PHPUnit_Framework_TestCase
     {
         $invoker = new AggregateInvoker($this);
         $invoker(
-            function ($file) {
+            function ($file): void {
                 $content = file_get_contents($file);
                 $this->_assertNotRegExp(
                     '/\bMage::(\w+?)\(/iS',
@@ -167,7 +167,7 @@ class ObsoleteCodeTest extends \PHPUnit_Framework_TestCase
     {
         $invoker = new AggregateInvoker($this);
         $invoker(
-            function ($file) {
+            function ($file): void {
                 $content = file_get_contents($file);
                 $this->_testObsoleteClasses($content, $file);
                 $this->_testObsoleteNamespaces($content);
@@ -181,7 +181,7 @@ class ObsoleteCodeTest extends \PHPUnit_Framework_TestCase
     {
         $invoker = new AggregateInvoker($this);
         $invoker(
-            function ($file) {
+            function ($file): void {
                 $content = file_get_contents($file);
                 $this->_testObsoletePropertySkipCalculate($content);
             },
@@ -896,7 +896,7 @@ class ObsoleteCodeTest extends \PHPUnit_Framework_TestCase
              *
              * @param string $file
              */
-            function ($file) {
+            function ($file): void {
                 $this->_assertNotRegExp(
                     '/[^a-z\d_]Mage\s*::/i',
                     file_get_contents($file),

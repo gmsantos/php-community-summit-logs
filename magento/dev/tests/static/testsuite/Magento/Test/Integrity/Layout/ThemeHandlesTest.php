@@ -23,7 +23,7 @@ class ThemeHandlesTest extends \PHPUnit_Framework_TestCase
              *
              * @param string $handleName
              */
-            function ($handleName) {
+            function ($handleName): void {
                 $this->assertContains(
                     $handleName,
                     $this->_getBaseFrontendHandles(),

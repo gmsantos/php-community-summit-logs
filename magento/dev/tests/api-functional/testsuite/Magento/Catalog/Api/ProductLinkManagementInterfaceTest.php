@@ -122,7 +122,7 @@ class ProductLinkManagementInterfaceTest extends WebapiAbstract
 
         $this->_webApiCall($serviceInfo, $arguments);
         $actual = $this->getLinkedProducts($productSku, 'related');
-        array_walk($actual, function (&$item) {
+        array_walk($actual, function (&$item): void {
             $item = $item->__toArray();
         });
         $this->assertEquals([$linkData], $actual);

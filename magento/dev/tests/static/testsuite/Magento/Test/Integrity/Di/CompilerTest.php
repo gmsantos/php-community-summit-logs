@@ -282,7 +282,7 @@ class CompilerTest extends \PHPUnit_Framework_TestCase
     {
         $invoker = new \Magento\Framework\App\Utility\AggregateInvoker($this);
         $invoker(
-            function ($file) {
+            function ($file): void {
                 $this->_validateFile($file);
             },
             Files::init()->getDiConfigs(true)
@@ -317,7 +317,7 @@ class CompilerTest extends \PHPUnit_Framework_TestCase
 
         $invoker = new \Magento\Framework\App\Utility\AggregateInvoker($this);
         $invoker(
-            function ($className) {
+            function ($className): void {
                 $this->_validateClass($className);
             },
             $this->_phpClassesDataProvider()
@@ -332,7 +332,7 @@ class CompilerTest extends \PHPUnit_Framework_TestCase
     {
         $invoker = new \Magento\Framework\App\Utility\AggregateInvoker($this);
         $invoker(
-            function ($plugin, $type) {
+            function ($plugin, $type): void {
                 $this->validatePlugins($plugin, $type);
             },
             $this->pluginDataProvider()

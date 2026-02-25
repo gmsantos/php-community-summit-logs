@@ -15,7 +15,7 @@ class LicenseTest extends \PHPUnit_Framework_TestCase
     {
         $invoker = new \Magento\Framework\App\Utility\AggregateInvoker($this);
         $invoker(
-            function ($filename) {
+            function ($filename): void {
                 $fileText = file_get_contents($filename);
                 if (!preg_match_all('#/\*\*.+@copyright.+?\*/#s', $fileText, $matches)) {
                     return;

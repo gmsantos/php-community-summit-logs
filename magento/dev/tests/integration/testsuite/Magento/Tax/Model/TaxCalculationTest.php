@@ -2510,7 +2510,7 @@ class TaxCalculationTest extends \PHPUnit_Framework_TestCase
     {
         array_walk_recursive(
             $data,
-            function (&$value, $key) {
+            function (&$value, $key): void {
                 if (($key === 'tax_class_key' || $key === 'customer_tax_class_key')
                     && is_string($value)
                 ) {

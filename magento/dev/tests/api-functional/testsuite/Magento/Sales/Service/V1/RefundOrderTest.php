@@ -106,7 +106,7 @@ class RefundOrderTest extends \Magento\TestFramework\TestCase\WebapiAbstract
             ->loadByIncrementId('100000001');
 
         $expectedItems = $this->getOrderItems($existingOrder);
-        $expectedItems[0]['qty'] = $expectedItems[0]['qty'] - 1;
+        $expectedItems[0]['qty'] -= 1;
 
         $expectedComment = [
             'comment' => 'Test Comment',

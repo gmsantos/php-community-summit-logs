@@ -21,7 +21,7 @@ class HandlesTest extends \PHPUnit_Framework_TestCase
              *
              * @param string $layoutFile
              */
-            function ($layoutFile) {
+            function ($layoutFile): void {
                 $issues = [];
                 $node = simplexml_load_file($layoutFile);
                 $label = $node['label'];
@@ -49,7 +49,7 @@ class HandlesTest extends \PHPUnit_Framework_TestCase
              *
              * @param string $layoutFile
              */
-            function ($layoutFile) {
+            function ($layoutFile): void {
                 $issues = [];
                 $xml = simplexml_load_file($layoutFile);
                 $containers = $xml->xpath('/layout//container') ?: [];
@@ -83,7 +83,7 @@ class HandlesTest extends \PHPUnit_Framework_TestCase
          *
          * @param string $layoutFile
          */
-            function ($layoutFile) {
+            function ($layoutFile): void {
                 $dom = new \DOMDocument();
                 $dom->load($layoutFile);
                 $xpath = new \DOMXpath($dom);

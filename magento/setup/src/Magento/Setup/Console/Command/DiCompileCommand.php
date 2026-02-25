@@ -178,11 +178,11 @@ class DiCompileCommand extends Command
             $progressBar->display();
 
             $this->taskManager->process(
-                function (OperationInterface $operation) use ($progressBar) {
+                function (OperationInterface $operation) use ($progressBar): void {
                     $progressBar->setMessage($operation->getName() . '...');
                     $progressBar->display();
                 },
-                function (OperationInterface $operation) use ($progressBar) {
+                function (OperationInterface $operation) use ($progressBar): void {
                     $progressBar->advance();
                 }
             );
@@ -219,15 +219,15 @@ class DiCompileCommand extends Command
             $vendorPathsRegExps = [];
             foreach ($vendorPaths as $vendorDir => $vendorModules) {
                 $vendorPathsRegExps[] = $vendorDir
-                    . '/(?:' . join('|', $vendorModules) . ')';
+                    . '/(?:' . implode('|', $vendorModules) . ')';
             }
             $basePathsRegExps[] = $basePath
-                . '/(?:' . join('|', $vendorPathsRegExps) . ')';
+                . '/(?:' . implode('|', $vendorPathsRegExps) . ')';
         }
 
         $excludedModulePaths = [
-            '#^(?:' . join('|', $basePathsRegExps) . ')/Test#',
-            '#^(?:' . join('|', $basePathsRegExps) . ')/tests#',
+            '#^(?:' . implode('|', $basePathsRegExps) . ')/Test#',
+            '#^(?:' . implode('|', $basePathsRegExps) . ')/tests#',
         ];
         return $excludedModulePaths;
     }
@@ -241,8 +241,8 @@ class DiCompileCommand extends Command
     private function getExcludedLibraryPaths(array $libraryPaths)
     {
         $excludedLibraryPaths = [
-            '#^(?:' . join('|', $libraryPaths) . ')/([\\w]+/)?Test#',
-            '#^(?:' . join('|', $libraryPaths) . ')/([\\w]+/)?tests#',
+            '#^(?:' . implode('|', $libraryPaths) . ')/([\\w]+/)?Test#',
+            '#^(?:' . implode('|', $libraryPaths) . ')/([\\w]+/)?tests#',
         ];
         return $excludedLibraryPaths;
     }

@@ -43,7 +43,7 @@ class DependencyTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $file
              */
-            function ($file) {
+            function ($file): void {
                 $componentRegistrar = new ComponentRegistrar();
                 $fileReflection = new FileReflection($file);
                 $tokens = new Tokens($fileReflection->getContents(), new ParserFactory());
@@ -83,7 +83,7 @@ class DependencyTest extends \PHPUnit_Framework_TestCase
         $libPaths = $componentRegistrar->getPaths(ComponentRegistrar::LIBRARY);
         $invoker = new AggregateInvoker($this);
         $invoker(
-            function ($file) use ($libPaths) {
+            function ($file) use ($libPaths): void {
                 $content = file_get_contents($file);
                 foreach ($libPaths as $libPath) {
                     if (strpos($file, $libPath) === 0) {

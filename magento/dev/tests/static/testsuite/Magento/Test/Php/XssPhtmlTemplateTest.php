@@ -39,7 +39,7 @@ class XssPhtmlTemplateTest extends \PHPUnit_Framework_TestCase
              *
              * @param string $file
              */
-            function ($file) use ($xssOutputValidator) {
+            function ($file) use ($xssOutputValidator): void {
                 $lines = $xssOutputValidator->getLinesWithXssSensitiveOutput($file);
                 $this->assertEmpty(
                     $lines,

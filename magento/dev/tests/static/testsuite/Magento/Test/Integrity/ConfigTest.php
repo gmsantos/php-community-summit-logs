@@ -16,7 +16,7 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
             /**
              * Verify whether all payment methods are declared in appropriate modules
              */
-            function ($configFile, $moduleName) {
+            function ($configFile, $moduleName): void {
                 $config = simplexml_load_file($configFile);
                 $nodes = $config->xpath('/config/default/payment/*/model') ?: [];
                 $formalModuleName = str_replace('_', '\\', $moduleName);

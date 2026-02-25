@@ -38,7 +38,7 @@ class ReadmeTest extends \PHPUnit_Framework_TestCase
         /**
          * @param string $dir
          */
-            function ($dir) {
+            function ($dir): void {
                 $file = $dir . DIRECTORY_SEPARATOR . self::README_FILENAME;
                 $this->assertFileExists(
                     $file,

@@ -19,7 +19,7 @@ abstract class AbstractConfig extends \PHPUnit_Framework_TestCase
             /**
              * @param string $configFile
              */
-            function ($configFile) {
+            function ($configFile): void {
                 $this->_validateFileExpectSuccess($configFile, $this->_getXsd(), $this->_getFileXsd());
             },
             \Magento\Framework\App\Utility\Files::init()->getConfigFiles($this->_getXmlName())

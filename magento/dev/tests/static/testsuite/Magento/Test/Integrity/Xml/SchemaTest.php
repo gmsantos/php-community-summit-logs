@@ -17,7 +17,7 @@ class SchemaTest extends \PHPUnit_Framework_TestCase
         /**
          * @param string $filename
          */
-            function ($filename) {
+            function ($filename): void {
                 $dom = new \DOMDocument();
                 $xmlFile = file_get_contents($filename);
                 $dom->loadXML($xmlFile);

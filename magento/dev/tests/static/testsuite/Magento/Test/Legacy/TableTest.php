@@ -20,7 +20,7 @@ class TableTest extends \PHPUnit_Framework_TestCase
             /**
              * @param string $filePath
              */
-            function ($filePath) {
+            function ($filePath): void {
                 $tables = self::extractTables($filePath);
                 $legacyTables = [];
                 foreach ($tables as $table) {
