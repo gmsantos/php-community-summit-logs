@@ -14,9 +14,9 @@ $handler->setFormatter(new LineFormatter("[%datetime%] %level_name%: %message%\n
 $logger->pushHandler($handler);
 
 // Not so clear logs
-$logger->info('foi');
-$logger->debug('vai');
-$logger->notice('passou!!');
+$logger->info('info');
+$logger->debug('debug');
+$logger->notice('NOTICE');
 
 foreach (range(2,4) as $value) {
     $logger->debug($value);

@@ -21,7 +21,7 @@ jobs:
           - laravel
           - lumen
           - magento
-          - sample
+          - samples
           - silex
           - symfony
           - zend-mvc
@@ -45,8 +45,8 @@ jobs:
               palantirnet/drupal-rector
 
       - name: Install dependencies for ${{ matrix.project }}
+        working-directory: ${{ matrix.project }}
         run: |
-          cd ${{ matrix.project }}
           # Use ignore-platform-reqs so Composer doesn't fail on legacy PHP versions
           composer install --ignore-platform-reqs --no-interaction --prefer-dist || true
 
